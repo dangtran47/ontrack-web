@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,6 +13,7 @@ import {
 import { BrandMark } from "@/components/BrandMark";
 import { Section } from "@/components/Section";
 import { FeatureCard } from "@/components/FeatureCard";
+import ScreenshotStrip from "@/components/ScreenshotStrip";
 
 export const metadata: Metadata = {
   title: "Gym",
@@ -155,23 +155,7 @@ export default function GymPage() {
           <p className="text-sm text-muted mb-8">
             Real screenshots from the app.
           </p>
-          <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            {screenshots.map(({ src, label, desc }) => (
-              <div key={src} className="flex-shrink-0 flex flex-col items-center gap-2">
-                <div className="rounded-2xl overflow-hidden border border-border shadow-sm bg-neutral-50">
-                  <Image
-                    src={src}
-                    alt={label}
-                    width={180}
-                    height={390}
-                    className="h-[360px] w-auto object-cover object-top"
-                  />
-                </div>
-                <span className="text-xs font-medium text-fg">{label}</span>
-                <span className="text-xs text-muted">{desc}</span>
-              </div>
-            ))}
-          </div>
+          <ScreenshotStrip screenshots={screenshots} />
         </div>
       </div>
 
