@@ -19,15 +19,42 @@ export const metadata: Metadata = {
   title: "Gym",
   description:
     "Mobile-first workout tracker. Log lifts, time your rests, and watch your progress compound.",
+  keywords: ["workout tracker", "lifting app", "PWA workout app", "gym app", "rest timer", "lift logger"],
   alternates: { canonical: "/gym" },
   openGraph: {
     title: "OnTrack Gym · On Track Guru",
     description: "Mobile-first workout tracker for individual lifters.",
     url: "https://ontrack.guru/gym",
   },
+  twitter: {
+    title: "OnTrack Gym — Log lifts, beat your PRs, stay consistent.",
+    description: "Mobile-first workout tracker. Log lifts, time your rests, and watch your progress compound.",
+  },
 };
 
 const GYM = "#7c40cf";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://ontrack.guru/gym#app",
+  name: "OnTrack Gym",
+  description:
+    "Mobile-first workout tracker. Log lifts, time your rests, and watch your progress compound.",
+  url: "https://gym.ontrack.guru",
+  applicationCategory: "HealthApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: { "@id": "https://ontrack.guru/#organization" },
+  screenshot: [
+    "https://ontrack.guru/gym-dashboard.png",
+    "https://ontrack.guru/gym-session.png",
+    "https://ontrack.guru/gym-history.png",
+    "https://ontrack.guru/gym-exercises.png",
+    "https://ontrack.guru/gym-add-exercise.png",
+    "https://ontrack.guru/gym-settings.png",
+  ],
+};
 
 const features = [
   {
@@ -74,6 +101,10 @@ const screenshots = [
 export default function GymPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <div
         className="relative overflow-hidden"

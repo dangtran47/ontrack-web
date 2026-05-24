@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { ArrowRight, Focus, ShieldCheck, Smartphone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: { absolute: "On Track Guru — Stay on track. Across everything." },
+  description:
+    "A growing family of focused apps for the things that matter to you. Private, mobile-first, no fluff.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "On Track Guru — Stay on track. Across everything.",
+    description: "A growing family of focused apps for the things that matter to you.",
+    url: "https://ontrack.guru",
+  },
+};
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { ProductTile } from "@/components/ProductTile";
